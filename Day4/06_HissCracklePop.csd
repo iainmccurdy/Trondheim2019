@@ -2,7 +2,13 @@
 
 ; Filtering clicks (dust of varying densities)
 
+; Use this in CsoundQt and open the widgets panel
+
 <CsoundSynthesizer>
+
+<CsOptions>
+-odac
+</CsOptions>
 
 <CsInstruments>
 
@@ -62,7 +68,7 @@ i 1 0 3600
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBKnob" version="2">
+ <bsbObject version="2" type="BSBKnob">
   <objectName>HissAmp</objectName>
   <x>8</x>
   <y>66</y>
@@ -80,7 +86,7 @@ i 1 0 3600
   <resolution>0.01000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>8</x>
   <y>41</y>
@@ -109,7 +115,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>HissAmp</objectName>
   <x>8</x>
   <y>146</y>
@@ -138,7 +144,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBKnob" version="2">
+ <bsbObject version="2" type="BSBKnob">
   <objectName>CrklAmp</objectName>
   <x>91</x>
   <y>66</y>
@@ -156,7 +162,7 @@ i 1 0 3600
   <resolution>0.01000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>91</x>
   <y>41</y>
@@ -185,7 +191,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>CrklAmp</objectName>
   <x>91</x>
   <y>146</y>
@@ -214,7 +220,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBKnob" version="2">
+ <bsbObject version="2" type="BSBKnob">
   <objectName>PopAmp</objectName>
   <x>174</x>
   <y>66</y>
@@ -232,7 +238,7 @@ i 1 0 3600
   <resolution>0.01000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>174</x>
   <y>41</y>
@@ -261,7 +267,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>PopAmp</objectName>
   <x>175</x>
   <y>146</y>
@@ -290,7 +296,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>8</x>
   <y>12</y>

@@ -2,13 +2,17 @@
 
 <CsoundSynthesizer>
 
+<CsOptions>
+-odac
+</CsOptions>
+
 <CsInstruments>
 
 0dbfs  = 1
 
 instr  1
  ; create some input noise
- aImp			dust2				1, 10																														; generate some noise
+ aImp			dust2				1, 10																														 ; generate some noise
  aImp			butlp				aImp, 1000																										; lowpass filter the noise
 
  ; create a resonanting string

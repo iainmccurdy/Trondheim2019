@@ -1,9 +1,15 @@
 ; Intermittent signal based upon RMS of the input signal
 
+; you can use this in Csound Qt and open the widgets panel
+
 ; Adjust the 'Threshold' control widget.
 ; The other two are just for display
 
 <CsoundSynthesizer>
+
+<CsOptions>
+-odac
+</CsOptions>
 
 <CsInstruments>
 
@@ -11,13 +17,13 @@ nchnls = 2
 0dbfs = 1
 
 instr	1 ; RMS threshold dependent intermittency
- aSigL,aSigR		diskin2		"ClassicalGuitar.wav", 1, 0, 1
- kRMS									rms							aSigL																																; scan the RMS of the audio signal
- 													outvalue		"RMS", kRMS																										; send RMS to a controller widget
- kThreshold			invalue			"Threshold"																										; read in a controller widget value
- kGate								=									kRMS > kThreshold ? 1 : 0										; interrogate the RMS signal and open or close a gate accordingly
- 													outvalue		"Gate", kGate																							; send gate status to a widget
- 													outs						aSigL * a(kGate), aSigR * a(kGate)	; apply gate to the audio signal
+aSigL,aSigR		diskin2		"ClassicalGuitar.wav", 1, 0, 1
+kRMS									rms							aSigL																																; scan the RMS of the audio signal
+													outvalue		"RMS", kRMS																										; send RMS to a controller widget
+kThreshold			invalue			"Threshold"																										; read in a controller widget value
+kGate								=									kRMS > kThreshold ? 1 : 0										; interrogate the RMS signal and open or close a gate accordingly
+													outvalue		"Gate", kGate																							; send gate status to a widget
+													outs						aSigL * a(kGate), aSigR * a(kGate)	; apply gate to the audio signal
 endin
 
 </CsInstruments>
@@ -41,7 +47,7 @@ i 1 0 3600
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>0</x>
   <y>3</y>
@@ -70,7 +76,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBController" version="2">
+ <bsbObject version="2" type="BSBController">
   <objectName>hor3</objectName>
   <x>86</x>
   <y>26</y>
@@ -86,7 +92,7 @@ i 1 0 3600
   <yMin>0.00000000</yMin>
   <yMax>1.00000000</yMax>
   <xValue>0.00000000</xValue>
-  <yValue>0.19218352</yValue>
+  <yValue>0.19521292</yValue>
   <type>fill</type>
   <pointsize>1</pointsize>
   <fadeSpeed>0.00000000</fadeSpeed>
@@ -96,14 +102,14 @@ i 1 0 3600
    <g>234</g>
    <b>0</b>
   </color>
-  <randomizable group="0" mode="both">false</randomizable>
+  <randomizable mode="both" group="0">false</randomizable>
   <bgcolor>
    <r>0</r>
    <g>0</g>
    <b>0</b>
   </bgcolor>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>78</x>
   <y>3</y>
@@ -132,7 +138,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBController" version="2">
+ <bsbObject version="2" type="BSBController">
   <objectName>hor3</objectName>
   <x>138</x>
   <y>26</y>
@@ -158,14 +164,14 @@ i 1 0 3600
    <g>234</g>
    <b>0</b>
   </color>
-  <randomizable group="0" mode="both">false</randomizable>
+  <randomizable mode="both" group="0">false</randomizable>
   <bgcolor>
    <r>0</r>
    <g>0</g>
    <b>0</b>
   </bgcolor>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>130</x>
   <y>3</y>
@@ -194,7 +200,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBController" version="2">
+ <bsbObject version="2" type="BSBController">
   <objectName>hor3</objectName>
   <x>25</x>
   <y>27</y>
@@ -220,7 +226,7 @@ i 1 0 3600
    <g>234</g>
    <b>0</b>
   </color>
-  <randomizable group="0" mode="both">false</randomizable>
+  <randomizable mode="both" group="0">false</randomizable>
   <bgcolor>
    <r>0</r>
    <g>0</g>

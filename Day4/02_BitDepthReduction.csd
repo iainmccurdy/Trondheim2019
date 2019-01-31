@@ -1,21 +1,27 @@
 ; Emulating bit depth reduction
 
+; Use in CsoundQt and open the widgets panel.
+
 <CsoundSynthesizer>
+
+<CsOptions>
+-odac
+</CsOptions>
 
 <CsInstruments>
 
-nchnls = 1
+nchnls = 2
 0dbfs = 1
 
 instr  1
- kNote				rspline		0, 60, 0.2, 0.3
- aSig					poscil			1, cpsmidinn(kNote)
- kBits  		invalue		"BitDepth"
- kBits				port					kBits, 0.2				
- kVals  		=  						2 ^ kBits																			; define number of values for selected bit depth
- kAmp   		=  						kVals / 2																			; halve the number of value to derive amplitude range
- aSig   		=  						round(aSig * kAmp) / kAmp	; scale signal up in amplitude, round values to the nearest integer and then rescale back down again
- 									out						aSig/10
+kNote				rspline		0, 60, 0.2, 0.3
+aSig					poscil			1, cpsmidinn(kNote)
+kBits  		invalue		"BitDepth"
+kBits				port					kBits, 0.2				
+kVals  		=  						2 ^ kBits																			; define number of values for selected bit depth
+kAmp   		=  						kVals / 2																			; halve the number of value to derive amplitude range
+aSig   		=  						round(aSig * kAmp) / kAmp	; scale signal up in amplitude, round values to the nearest integer and then rescale back down again
+									outs					aSig/3, aSig/3
 endin
 
 </CsInstruments>
@@ -39,7 +45,7 @@ i 1 0 360
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBHSlider" version="2">
+ <bsbObject version="2" type="BSBHSlider">
   <objectName>BitDepth</objectName>
   <x>96</x>
   <y>36</y>
@@ -51,13 +57,13 @@ i 1 0 360
   <midicc>0</midicc>
   <minimum>1.00000000</minimum>
   <maximum>16.00000000</maximum>
-  <value>2.06824926</value>
+  <value>1.17804154</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>196</x>
   <y>9</y>
@@ -86,7 +92,7 @@ i 1 0 360
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>BitDepth</objectName>
   <x>14</x>
   <y>36</y>
@@ -96,7 +102,7 @@ i 1 0 360
   <visible>true</visible>
   <midichan>0</midichan>
   <midicc>-3</midicc>
-  <label>2.068</label>
+  <label>1.178</label>
   <alignment>center</alignment>
   <font>Arial</font>
   <fontsize>14</fontsize>

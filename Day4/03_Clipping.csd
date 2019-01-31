@@ -1,11 +1,16 @@
 ; using the 'clip' opcode to implement 'soft' clipping of the signal
 
-; Open the widget panel!
+; Use in CsoundQt and open the widget panel!
 
 <CsoundSynthesizer>
 
+<CsOptions>
+-odac
+</CsOptions>
+
 <CsInstruments>
 
+nchnls = 2
 0dbfs  = 1
 
 ; clipping a sound file
@@ -31,7 +36,8 @@ endin
 </CsInstruments>
 
 <CsScore>
-i 2 0 3600
+i 1  0 9
+i 2 10 20
 </CsScore>
 
 </CsoundSynthesizer>
@@ -49,7 +55,7 @@ i 2 0 3600
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBHSlider" version="2">
+ <bsbObject version="2" type="BSBHSlider">
   <objectName>Gain</objectName>
   <x>85</x>
   <y>32</y>
@@ -67,7 +73,7 @@ i 2 0 3600
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>185</x>
   <y>5</y>
@@ -96,7 +102,7 @@ i 2 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>Gain</objectName>
   <x>4</x>
   <y>32</y>

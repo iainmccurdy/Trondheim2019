@@ -1,6 +1,12 @@
 ; Stuck buffer
 
+; Use in CsoundQt and open the widgets panel
+
 <CsoundSynthesizer>
+
+<CsOptions>
+-odac
+</CsOptions>
 
 <CsInstruments>
 
@@ -28,7 +34,7 @@ instr		1
  aBufR								*=						kStuck
  
  ; mix the dry signal and the stuck buffer signal at the output
- 												out					aSigL+aBufL, aSigR+aBufR
+ 												 outs				aSigL+aBufL, aSigR+aBufR
 endin
 
 </CsInstruments>
@@ -52,7 +58,7 @@ i 1 0 3600
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBVSlider" version="2">
+ <bsbObject version="2" type="BSBVSlider">
   <objectName>BufferDur</objectName>
   <x>33</x>
   <y>48</y>
@@ -64,13 +70,13 @@ i 1 0 3600
   <midicc>0</midicc>
   <minimum>0.01000000</minimum>
   <maximum>0.50000000</maximum>
-  <value>0.14332155</value>
+  <value>0.14851590</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>BufferDur</objectName>
   <x>13</x>
   <y>332</y>
@@ -80,7 +86,7 @@ i 1 0 3600
   <visible>true</visible>
   <midichan>0</midichan>
   <midicc>-3</midicc>
-  <label>0.143</label>
+  <label>0.149</label>
   <alignment>center</alignment>
   <font>Arial</font>
   <fontsize>14</fontsize>
@@ -99,7 +105,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>10</x>
   <y>6</y>
@@ -129,7 +135,7 @@ Duration</label>
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBButton" version="2">
+ <bsbObject version="2" type="BSBButton">
   <objectName>Stuck</objectName>
   <x>92</x>
   <y>62</y>

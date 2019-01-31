@@ -1,10 +1,16 @@
 ; Using the 'fold' opcode to emulate sample rate reduction.
 
+; Use in CsoundQt and open the widgets panel
+
 <CsoundSynthesizer>
+
+<CsOptions>
+-odac
+</CsOptions>
 
 <CsInstruments>
 
-nchnls = 1
+nchnls = 2
 0dbfs  = 1
 
 ; fold applied to a sound file read in using diskin2
@@ -31,7 +37,7 @@ instr  3
  aSig			poscil		0.3, cpsmidinn(kNote)
  kIncr		invalue	"Incr"
  aSig			fold				aSig, kIncr^2 
- 							out					aSig/10
+ 							outs				aSig/10, aSig/10
 endin
 
 
@@ -45,18 +51,18 @@ instr	5
  aEnv			expon			1, 0.2, 0.01
  aSig			*=						aEnv
  kIncr		invalue	"Incr"
- aSig			fold				aSig, kIncr^2
+ aSig			fold				aSig, kIncr^2 
  aSig			butlp			aSig, 5000
- 							out					aSig / 10
+ 							outs				aSig / 10, aSig / 10
 endin
 
 </CsInstruments>
 
 <CsScore>
-;i 1 0 360
-;i 2 0 360
-;i 3 0 360
-i 4 0 30
+i 1  0 9
+i 2 10 9
+i 3 20 9
+i 4 30 9
 </CsScore>
 
 </CsoundSynthesizer>
@@ -74,7 +80,7 @@ i 4 0 30
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBHSlider" version="2">
+ <bsbObject version="2" type="BSBHSlider">
   <objectName>Incr</objectName>
   <x>95</x>
   <y>36</y>
@@ -92,7 +98,7 @@ i 4 0 30
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>195</x>
   <y>9</y>
@@ -121,7 +127,7 @@ i 4 0 30
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>Incr</objectName>
   <x>14</x>
   <y>36</y>

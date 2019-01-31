@@ -2,6 +2,10 @@
 
 <CsoundSynthesizer>
 
+<CsOptions>
+-odac
+</CsOptions>
+
 <CsInstruments>
 
 nchnls = 1
@@ -13,7 +17,7 @@ instr	1
  kCF									rspline		6, 13, 0.1, 0.3							; cutoff frequency
  kBandWidth		invalue		"Bandwidth"												; filter bandwidth
  aImp								reson				aImp, cpsoct(kCF), cpsoct(kCF)*kBandWidth, 2	; filter clicks
-													out						aImp
+													outs					aImp, aImp
 endin
 
 </CsInstruments>
@@ -37,7 +41,7 @@ i 1 0 3600
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject type="BSBKnob" version="2">
+ <bsbObject version="2" type="BSBKnob">
   <objectName>Bandwidth</objectName>
   <x>8</x>
   <y>36</y>
@@ -55,7 +59,7 @@ i 1 0 3600
   <resolution>0.01000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject type="BSBLabel" version="2">
+ <bsbObject version="2" type="BSBLabel">
   <objectName/>
   <x>8</x>
   <y>11</y>
@@ -84,7 +88,7 @@ i 1 0 3600
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject type="BSBDisplay" version="2">
+ <bsbObject version="2" type="BSBDisplay">
   <objectName>Bandwidth</objectName>
   <x>8</x>
   <y>116</y>
